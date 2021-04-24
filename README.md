@@ -5,9 +5,10 @@ where a button will shuffle the songs and if the miniplayer is clicked then it w
 This player will show the song's name, artist and cover image.
 
 ## Extra credit: Attempted
-1. Show a stock Android back arrow button, ←, in the Header/Toolbar of Activity B. When clicked, it
+(1.) Show a stock Android back arrow button, ←, in the Header/Toolbar of Activity B. When clicked, it
 should navigate back to SongListActivity (+.25)
-3. When a user presses shuffle, the list should animate the changes using DiffUtil (+1)
+
+(3.) When a user presses shuffle, the list should animate the changes using DiffUtil (+1)
 
 ## Screenshots
 <img src="./screenshot_Dotify_hw2.png" alt="Screenshot of the app" height="500" />
