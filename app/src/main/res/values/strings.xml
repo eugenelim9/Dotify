@@ -10,4 +10,9 @@
     <string name="imgPlay_description">This is an image of the play button</string>
     <string name="imgPrevious_description">This is an image of the previous track button</string>
     <string name="etUsername_hint">Enter username here</string>
+    <string name="title_all_songs">All Songs</string>
+    <string name="song_item_title">Song Title</string>
+    <string name="song_item_artist">Song Artist</string>
+    <string name="btn_shuffle">SHUFFLE</string>
+    <string name="player_texts">%s - %s</string>
 </resources>

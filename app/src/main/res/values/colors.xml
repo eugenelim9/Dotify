@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="btnChangeUser_color">#BFBBBB</color>
     <color name="default_text_color">#000000</color>
+    <color name="player_color">#B0BCCA</color>
 </resources>
