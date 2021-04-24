@@ -1,12 +1,13 @@
-# HW1 - Layouts & Events by Eugene Lim
+# HW2 - Activities & RecyclerView by Eugene Lim
 
-This is a spotify clone that has base UI functionality like increasing play count and showing toast messages for next/prev buttons.
-User can change username by clicking the "CHANGE USER" button and apply the change clicking "APPLY" button.
+This is a spotify clone that loads a list of songs. When a song is clicked, a miniplayer appears at the bottom
+where a button will shuffle the songs and if the miniplayer is clicked then it will open that song to a player.
+This player will show the song's name, artist and cover image.
 
 ## Extra credit: Attempted
-3. If using ConstraintLayout, utilize a Barrier or Guideline somewhere with a view constrained to it (+0.25)
-4. All hardcoded dimensions & colors are extracted into res/values/dimens.xml & res/values/colors.xml
-respectively (+ .5)
+1. Show a stock Android back arrow button, ←, in the Header/Toolbar of Activity B. When clicked, it
+should navigate back to SongListActivity (+.25)
+3. When a user presses shuffle, the list should animate the changes using DiffUtil (+1)
 
 ## Screenshots
-<img src="./Screenshot_20210415-082612_Dotify.png" alt="Screenshot of the app" height="500" />
+<img src="./screenshot_Dotify_hw2.png" alt="Screenshot of the app" height="500" />
