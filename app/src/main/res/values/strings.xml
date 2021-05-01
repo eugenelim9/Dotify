@@ -15,4 +15,12 @@
     <string name="song_item_artist">Song Artist</string>
     <string name="btn_shuffle">SHUFFLE</string>
     <string name="player_texts">%s - %s</string>
+    <string name="btnSettings">SETTINGS</string>
+    <string name="tvPlayCount">Play count: %d</string>
+    <string name="btnProfile">Profile</string>
+    <string name="btnStatistics">PROFILE STATISTICS</string>
+    <string name="btnAbout">ABOUT</string>
+    <string name="imgSaitama">profile picture of Saitama</string>
+    <string name="tvUsername"><b>Saitama</b></string>
+    <string name="tvVersionNumber">Version: %s</string>
 </resources>
