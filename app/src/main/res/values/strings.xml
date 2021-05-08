@@ -10,4 +10,5 @@
     <string name="imgPlay_description">This is an image of the play button</string>
     <string name="imgPrevious_description">This is an image of the previous track button</string>
     <string name="etUsername_hint">Enter username here</string>
+    <string name="player_texts">%s - %s</string>
 </resources>
