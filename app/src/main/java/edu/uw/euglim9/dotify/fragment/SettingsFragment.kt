@@ -1,4 +1,4 @@
-package edu.uw.euglim9.dotify
+package edu.uw.euglim9.dotify.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import edu.uw.euglim9.dotify.NavGraphDirections
+import edu.uw.euglim9.dotify.fragment.SettingsFragmentArgs
 import edu.uw.euglim9.dotify.databinding.FragmentSettingsBinding
 
 class SettingsFragment : Fragment() {
@@ -18,9 +20,13 @@ class SettingsFragment : Fragment() {
         val receivedSong = safeArgs.song
         val numberPlays = safeArgs.numberPlays
 
-
         binding.btnStatistics.setOnClickListener {
-            navController.navigate(NavGraphDirections.actionGlobalStatisticsFragment(receivedSong, numberPlays))
+            navController.navigate(
+                NavGraphDirections.actionGlobalStatisticsFragment(
+                    receivedSong,
+                    numberPlays
+                )
+            )
         }
 
         binding.btnProfile.setOnClickListener {
@@ -33,4 +39,12 @@ class SettingsFragment : Fragment() {
 
         return binding.root
     }
+
+//    override fun onActivityCreated(savedInstanceState: Bundle?) {
+//        super.onActivityCreated(savedInstanceState)
+//        appContext = ((DotifyApplication) getActivity().getApplication());
+//
+////        private val dotifyApp: DotifyApplication by lazy { application as DotifyApplication}
+//
+//    }
 }

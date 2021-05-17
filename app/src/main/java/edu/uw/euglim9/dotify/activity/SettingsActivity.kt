@@ -1,4 +1,4 @@
-package edu.uw.euglim9.dotify
+package edu.uw.euglim9.dotify.activity
 
 import android.content.Context
 import android.content.Intent
@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.ericchee.songdataprovider.Song
+//import com.ericchee.songdataprovider.Song
+import edu.uw.euglim9.dotify.R
 import edu.uw.euglim9.dotify.databinding.ActivitySettingsBinding
+import edu.uw.euglim9.dotify.model.Song
 
 private const val SONG_KEY = "song"
 private const val PLAYS_KEY = "numberPlays"

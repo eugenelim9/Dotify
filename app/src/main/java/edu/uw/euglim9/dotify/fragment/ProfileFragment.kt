@@ -1,4 +1,4 @@
-package edu.uw.euglim9.dotify
+package edu.uw.euglim9.dotify.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

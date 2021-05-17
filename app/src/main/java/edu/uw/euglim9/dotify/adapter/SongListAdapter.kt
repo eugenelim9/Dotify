@@ -1,4 +1,4 @@
-package edu.uw.euglim9.dotify
+package edu.uw.euglim9.dotify.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.ericchee.songdataprovider.Song
+import coil.load
+//import com.ericchee.songdataprovider.Song
+import edu.uw.euglim9.dotify.model.Song
+import edu.uw.euglim9.dotify.R
 
 class SongListAdapter(initialListOfSongs: List<Song>): RecyclerView.Adapter<SongListAdapter.SongViewHolder>() {
     private var listOfSongs: List<Song> = initialListOfSongs.toList()  //to create a duplicate of the list passed in
@@ -39,7 +42,8 @@ class SongListAdapter(initialListOfSongs: List<Song>): RecyclerView.Adapter<Song
         fun bind(song: Song) {
             tvSongTitle.text = song.title
             tvSongArtist.text = song.artist
-            ivSongPicture.setImageResource(song.smallImageID)
+//            ivSongPicture.setImageResource(song.smallImageURL)
+            ivSongPicture.load(song.smallImageURL)
 
             itemView.setOnClickListener {
                 onSongClickListener?.invoke(song)

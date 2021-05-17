@@ -1,25 +1,40 @@
-package edu.uw.euglim9.dotify
+package edu.uw.euglim9.dotify.activity
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
-import com.ericchee.songdataprovider.Song
+import coil.load
+import edu.uw.euglim9.dotify.DotifyApplication
+//import com.ericchee.songdataprovider.Song
+import edu.uw.euglim9.dotify.R
 import kotlin.random.Random
 import edu.uw.euglim9.dotify.databinding.ActivityPlayerBinding
+import edu.uw.euglim9.dotify.manager.SongManager
+import edu.uw.euglim9.dotify.model.Song
 
 private const val COUNT_VALUE_KEY = "COUNT_VALUE_KEY"
+
+fun launchPlayerActivity(context: Context) = with(context) {
+    startActivity(Intent(this, PlayerActivity::class.java))
+}
 
 class PlayerActivity : AppCompatActivity() {
     private var randomNumber = Random.nextInt(1000, 10000)
     private lateinit var binding: ActivityPlayerBinding
     private lateinit var song: Song
+    private lateinit var songManager: SongManager
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPlayerBinding.inflate(layoutInflater).apply { setContentView(root) }
+
+        this.songManager = (this.applicationContext as DotifyApplication).songManager
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         if (savedInstanceState != null) {
@@ -28,12 +43,14 @@ class PlayerActivity : AppCompatActivity() {
 
         binding.tvPlays.text = "$randomNumber plays"
 
-        song = intent.getParcelableExtra<Song>(SONG_KEY)!!
+//        song = intent.getParcelableExtra<Song>(SONG_KEY)!!
+        song = songManager.selectedSong!!
 
         if (song != null) {
             binding.tvTitle.text = song.title
             binding.tvArtist.text = song.artist
-            binding.imgCover.setImageResource(song.largeImageID)
+//            binding.imgCover.setImageResource(song.largeImageID)
+            binding.imgCover.load(song.largeImageURL)
         }
     }
 
