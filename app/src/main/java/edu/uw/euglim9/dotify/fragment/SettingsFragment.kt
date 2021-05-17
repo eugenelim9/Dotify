@@ -39,12 +39,4 @@ class SettingsFragment : Fragment() {
 
         return binding.root
     }
-
-//    override fun onActivityCreated(savedInstanceState: Bundle?) {
-//        super.onActivityCreated(savedInstanceState)
-//        appContext = ((DotifyApplication) getActivity().getApplication());
-//
-////        private val dotifyApp: DotifyApplication by lazy { application as DotifyApplication}
-//
-//    }
 }

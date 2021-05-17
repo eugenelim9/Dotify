@@ -42,7 +42,6 @@ class SongListAdapter(initialListOfSongs: List<Song>): RecyclerView.Adapter<Song
         fun bind(song: Song) {
             tvSongTitle.text = song.title
             tvSongArtist.text = song.artist
-//            ivSongPicture.setImageResource(song.smallImageURL)
             ivSongPicture.load(song.smallImageURL)
 
             itemView.setOnClickListener {

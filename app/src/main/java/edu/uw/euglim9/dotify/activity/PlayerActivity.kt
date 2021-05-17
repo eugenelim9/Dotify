@@ -43,13 +43,11 @@ class PlayerActivity : AppCompatActivity() {
 
         binding.tvPlays.text = "$randomNumber plays"
 
-//        song = intent.getParcelableExtra<Song>(SONG_KEY)!!
         song = songManager.selectedSong!!
 
         if (song != null) {
             binding.tvTitle.text = song.title
             binding.tvArtist.text = song.artist
-//            binding.imgCover.setImageResource(song.largeImageID)
             binding.imgCover.load(song.largeImageURL)
         }
     }

@@ -11,17 +11,17 @@ class DataRepository {
         .baseUrl("https://raw.githubusercontent.com/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-        .create(ProfileService::class.java)
+        .create(DotifyService::class.java)
 
     suspend fun getProfile(): Profile = dotifyService.getProfile()
 
     suspend fun getSongList() = dotifyService.getSongList()
 }
 
-interface ProfileService {
+interface DotifyService {
     @GET("echeeUW/codesnippets/master/user_info.json")
     suspend fun getProfile(): Profile
 
-    @GET("https://raw.githubusercontent.com/echeeUW/codesnippets/master/musiclibrary.json")
+    @GET("echeeUW/codesnippets/master/musiclibrary.json")
     suspend fun getSongList(): SongList
 }

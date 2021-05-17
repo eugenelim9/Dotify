@@ -46,7 +46,6 @@ class SongListActivity : AppCompatActivity() {
             binding.tvPlayerTitle.text = getString(R.string.player_texts, someSong?.title, someSong?.artist)
         }
 
-//        val listOfSongs = SongDataProvider.getAllSongs()
         listOfSongs = listOf()
         loadSongList()
         songListAdapter = SongListAdapter(listOfSongs)
@@ -65,9 +64,6 @@ class SongListActivity : AppCompatActivity() {
         }
 
         binding.player.setOnClickListener {
-//                val intent = Intent(this, PlayerActivity::class.java)
-//                intent.putExtra(SONG_KEY, someSong)
-//                startActivity(intent)
             launchPlayerActivity(this@SongListActivity)
         }
 
