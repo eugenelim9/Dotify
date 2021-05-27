@@ -10,14 +10,13 @@ import android.view.View
 import android.widget.Toast
 import coil.load
 import edu.uw.euglim9.dotify.DotifyApplication
-//import com.ericchee.songdataprovider.Song
 import edu.uw.euglim9.dotify.R
 import kotlin.random.Random
 import edu.uw.euglim9.dotify.databinding.ActivityPlayerBinding
 import edu.uw.euglim9.dotify.manager.SongManager
-import edu.uw.euglim9.dotify.model.Song
 
 private const val COUNT_VALUE_KEY = "COUNT_VALUE_KEY"
+const val SONG_INFO_KEY = "SONG_INFO_KEY"
 
 fun launchPlayerActivity(context: Context) = with(context) {
     startActivity(Intent(this, PlayerActivity::class.java))
@@ -26,7 +25,8 @@ fun launchPlayerActivity(context: Context) = with(context) {
 class PlayerActivity : AppCompatActivity() {
     private var randomNumber = Random.nextInt(1000, 10000)
     private lateinit var binding: ActivityPlayerBinding
-    private lateinit var song: Song
+    private lateinit var song: edu.uw.euglim9.dotify.model.Song
+    private lateinit var songNotification: com.ericchee.songdataprovider.Song
     private lateinit var songManager: SongManager
 
 
@@ -45,10 +45,17 @@ class PlayerActivity : AppCompatActivity() {
 
         song = songManager.selectedSong!!
 
-        if (song != null) {
-            binding.tvTitle.text = song.title
-            binding.tvArtist.text = song.artist
-            binding.imgCover.load(song.largeImageURL)
+        if (intent.getParcelableExtra<com.ericchee.songdataprovider.Song>(SONG_INFO_KEY) != null) {
+            songNotification = intent.getParcelableExtra<com.ericchee.songdataprovider.Song>(SONG_INFO_KEY)!!
+            binding.tvTitle.text = songNotification.title
+            binding.tvArtist.text = songNotification.artist
+            binding.imgCover.load(songNotification.largeImageID)
+        } else {
+            if (song != null) {
+                binding.tvTitle.text = song.title
+                binding.tvArtist.text = song.artist
+                binding.imgCover.load(song.largeImageURL)
+            }
         }
     }
 

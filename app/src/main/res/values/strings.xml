@@ -23,4 +23,8 @@
     <string name="imgSaitama">profile picture of Saitama</string>
     <string name="tvUsername"><b>Saitama</b></string>
     <string name="tvVersionNumber">Version: %s</string>
+    <string name="new_song">New Song</string>
+    <string name="new_song_channel_description">This is a channel that notifies when you have a new song</string>
+    <string name="notification_title">New Music from %s</string>
+    <string name="notification_content">Listen now to %s</string>
 </resources>

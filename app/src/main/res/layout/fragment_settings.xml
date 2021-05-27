@@ -33,4 +33,14 @@
         android:text="@string/btnAbout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnStatistics"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchNotificationsEnabled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:switchPadding="10dp"
+        android:text="Auto Refresh"
+        app:layout_constraintTop_toBottomOf="@+id/btnAbout"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
